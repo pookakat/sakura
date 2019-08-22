@@ -1,9 +1,12 @@
 var Sequelize = require("sequelize");
 
 
-var db = require('./index'),
-    sequelize = db.sequelize;
-    Sequelize = db.Sequelize;
+var db = require('./index');
+
+var    sequelize = db.sequelize;
+       Sequelize = db.Sequelize;
+
+    console.log
 
 module.exports = function(sequelize, DataTypes){
     const UserProfiles = sequelize.define('UserProfiles',{
