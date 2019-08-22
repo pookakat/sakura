@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
 
     //script to verify that the username has not already been taken 
-    app.get("/api/check-user", (req, res) => {
+    app.get("./api/check-user", (req, res) => {
         const {user} = req.params;
         UserProfiles.findAll({
             where: {
