@@ -24,10 +24,6 @@ module.exports = function(app) {
             where: {
                 userName: user.userName
             }
-            ,
-            headers:{
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json'}
         }).then((result) => {
             return res.json(result);
         });
