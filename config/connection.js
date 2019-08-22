@@ -17,6 +17,7 @@ console.log('running jawsDB', jawsdb);
   .then(() => {
   })
   .catch(err => {
+    console.log(err)
   });
 
 
