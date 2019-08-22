@@ -6,6 +6,11 @@ var express = require("express");
 module.exports = function(app) {
     var app = express();
 
+    const options={headers:{
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'}
+    };
+
     var cors = require('cors');
     app.use(cors());
 
@@ -15,7 +20,8 @@ module.exports = function(app) {
             where: {
                 userName: user.uName,
                 password: user.password
-            }
+            },
+            options
         }).then((result)=>{
             return res.json(result);
         });
@@ -29,9 +35,7 @@ module.exports = function(app) {
             where: {
                 userName: user.userName
             },
-            headers:{
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json'}
+            options
             
         }).then((result) => {
             return res.json(result);
@@ -44,7 +48,8 @@ module.exports = function(app) {
         UserProfiles.findAll({
             where: {
                 userName: user
-            }
+            },
+            options
         }).then((result)=>{
             return res.json(result);
         });
@@ -63,7 +68,8 @@ module.exports = function(app) {
                         }
                     }
                 ]
-            }
+            },
+            options
         }).then((result)=>{
             return res.json(result)
         });
@@ -74,7 +80,8 @@ module.exports = function(app) {
         Connections.update(req.body, {
             where: {
                 id: req.params.id
-            }
+            },
+            options
         }).then((success)=>{
            return res.json(success);
 
@@ -86,7 +93,8 @@ module.exports = function(app) {
     Characters.destroy({
       where: {
         id: req.params.id
-      }
+      },
+      options
     })
       .then((result)=> {
        return res.json(result);
@@ -104,11 +112,13 @@ module.exports = function(app) {
     },
     {
         timestamps: false,
-        freezeTableName: true
-    }).then((results)=>{
+        freezeTableName: true},
+        options
+    ).then((results)=>{
         return res.json(results);
         });
     });
+    
 
     //returning all accepted connections. may need to chain this either w/in sql or in clientside js to pull the rest of the accepted users' info
     app.get("/api/connections/accepted", (req, res)=>{
@@ -124,7 +134,8 @@ module.exports = function(app) {
                         }
                     }
                 ]
-            }
+            },
+            options
         }). then((result)=>{
             return res.json(result);
         });
@@ -137,7 +148,8 @@ module.exports = function(app) {
             where:{
                 accepted: false,
                 userReceiving: userId
-            }
+            },
+            options
         }).then((results)=>{
             return res.json(results);
         });
@@ -149,7 +161,8 @@ module.exports = function(app) {
         UserProfiles.findAll({
             where:{
                 organic: organic
-            }
+            },
+            options
         }).then((result)=>{
             return res.json(result);
         });
@@ -215,7 +228,8 @@ module.exports = function(app) {
         UserProfiles.update(req.body,{
             where: {
                 id: req.params.id
-            }
+            },
+            options
         }).then((success)=>{
         return res.json(success);
         });
@@ -226,7 +240,8 @@ module.exports = function(app) {
         UserProfiles.destroy(req.body, {
             where:{
                 id: req.params.id
-            }
+            },
+            options
         }).then((result)=>{
         return res.json(result);
         });
