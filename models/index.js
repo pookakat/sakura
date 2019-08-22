@@ -9,7 +9,7 @@ var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
 
-var sequelize = new Sequelize("mariadb://lm4tkikohrr52ljs:fhayany3f90q1rua@cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/de6g2kkphqecqbq4");
+var sequelize = new Sequelize("mysql://lm4tkikohrr52ljs:fhayany3f90q1rua@cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/de6g2kkphqecqbq4");
 
 /*if (typeof process.env.JAWSDB_URL != undefined) {
   var sequelize = new Sequelize(process.env.JAWSDB_URL);
