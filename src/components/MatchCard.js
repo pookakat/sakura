@@ -4,7 +4,6 @@ import React from "react";
 
 function MatchCard(props){
     /*handleClick = (id) =>{
-        console.log(id);
         this.handleClick = this.handleClick.bind(this);
         let route;
         if (window.location.includes('local')){
@@ -13,7 +12,6 @@ function MatchCard(props){
             route = '/api/user-profiles/'
         }
         axios.get(route + id).then(function(res){
-            console.log(res);
             //put some rendering stuff here for a button to click 'connect' or something
         }).then(function(res){
             let routed ;
@@ -28,7 +26,6 @@ function MatchCard(props){
                 routed = 'api/connections';
             }
             axios.post( routed, newConnection ).then(function(response){
-                console.log(response);
             })
         })
     };*/

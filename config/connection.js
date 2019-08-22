@@ -3,6 +3,7 @@ var Sequelize = require("sequelize");
 const jawsdb = process.env.JAWSDB_URL;
 if (jawsdb) {
   var sequelize = new Sequelize(jawsdb);
+  console.log('running jawsDB', jawsdb);
 } else {
   var sequelize = new Sequelize("gardening_db", "root", "password", {
     host: "localhost",
@@ -15,10 +16,8 @@ if (jawsdb) {
   sequelize
   .authenticate()
   .then(() => {
-    console.log('Connection has been established successfully.');
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err);
   });
 }
 

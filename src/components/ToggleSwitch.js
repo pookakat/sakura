@@ -30,7 +30,6 @@ export default class ToggleSwitch extends React.Component {
             document.getElementById('info-box').classList.add("ltpink-bkg");
             document.getElementById("myonoffswitch").setAttribute('value', false);
         }
-        console.log(document.getElementById('myonoffswitch').value);
     };
     
     render(){

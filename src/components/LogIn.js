@@ -14,14 +14,12 @@ export default class UserDetails extends React.Component {
         const {uName, password} = document.getElementById("loginForm");
         const user=uName.value;
         if(uName.value && password.value){
-        console.log(user, password.value);
         let route;
             if(window.location.href.includes('local')){
                 route = "http://localHost:3001/api/login"
             } else {
                 route = "/api/login";
             }
-            console.log(route);
             axios.get(route, {
             method: 'GET',
             
@@ -35,7 +33,6 @@ export default class UserDetails extends React.Component {
             }
         })
         .then(function(res){
-            console.log(res);
             const userName = res.data[0].userName;
             const theme = res.data[0].theme;
             window.localStorage.setItem('userName', userName);
@@ -44,7 +41,6 @@ export default class UserDetails extends React.Component {
             _this.setState(state);
         })
         .catch(function(err){
-            console.log(err);
         });
         }
         else{
@@ -53,7 +49,6 @@ export default class UserDetails extends React.Component {
     };
    
     LogOut = (event) => {
-        console.log('clicked');
         event.PreventDefault();
         const state = Object.assign({}, this.state);
         const _this = this;

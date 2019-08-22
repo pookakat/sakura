@@ -223,14 +223,12 @@ export default class Register extends React.Component {
     checkUser = () => {
         const user = document.getElementById("userName").value;
         if (user.length > 2){
-        console.log(user);
         let route;
           if(window.location.href.includes('local')){
                 route = "http://localHost:3001/api/check-user"
           } else {
               route = "/api/check-user";
           }
-          console.log(route);
           axios.get(route, {
             method: 'GET',
           
@@ -243,7 +241,6 @@ export default class Register extends React.Component {
             }
         })
         .then(function(res){
-            console.log(res.data);
             if (res.data.length !== 0){
                 document.getElementById("not-unique").style.display="block";
                 }
@@ -256,7 +253,6 @@ export default class Register extends React.Component {
         });
     }};
     checkUser2 = () => {
-        console.log(document.getElementById("myonoffswitch").value);
         const user = document.getElementById("userName").value;
         if (user.length <= 2){
             document.getElementById("userName").value=null;
@@ -269,7 +265,6 @@ export default class Register extends React.Component {
           } else {
               route = "/api/check-user";
           }
-          console.log(route);
           axios.get(route, {
             method: 'GET',
           
@@ -282,7 +277,6 @@ export default class Register extends React.Component {
             }
         })
         .then(function(res){
-            console.log(res.data);
             if (res.data.length !== 0){
                 document.getElementById("userName").value=null;
                 alert('Please pick a different user name.');
@@ -314,9 +308,6 @@ export default class Register extends React.Component {
             userName.value = null;
         }
 
-        console.log( gender.value, userName.value, firstName.value, knownAs.value, email.value, password.value, confirmPassword.value, myonoffswitch.value );
-        console.log(time.value);
-        console.log(dateOfBirth.value, city.value);
 
         const organic = document.getElementById("yes-organic").checked;
         const flowers = document.getElementById("flowers").checked || document.getElementById("both").checked;
@@ -342,11 +333,7 @@ export default class Register extends React.Component {
         const broccoli = document.getElementById("broccoli").checked;
         const hasGarden = document.getElementById("yes-garden").checked;
 
-        console.log('Grows Values', flowers, tomatoes, cucumbers, sweetCorn, beans, peas, carrots, lettuce, watermelon, onion, mint, basil);
-        console.log('Has Garden?', hasGarden);
-        console.log('Is organic?', organic);
         if(userName.value && firstName.value && password.value && email.value && knownAs.value && city.value && gender.value && time.value && dateOfBirth.value) {
-            console.log('everything else matches, performing axios request');
             const userData = {
                 userName: userName.value,
                 firstName: firstName.value,
@@ -387,12 +374,9 @@ export default class Register extends React.Component {
             }
             const userPass=password.value;
             if (userPass.length >= 8){
-                console.log("Password passes length check");
                 if (password.value === confirmPassword.value){
-                    console.log('passwords match, time to register.');
                     window.localStorage.setItem('userName', userData.userName);
                     window.localStorage.setItem('theme', userData.theme)
-                    console.log(window.localStorage.getItem('userName'));
                     let route;
                     if(window.location.href.includes('local')){
                             route = "http://localHost:3001/api/user-profiles/newUser"
@@ -408,7 +392,6 @@ export default class Register extends React.Component {
                         body:{userData} 
                     })
                     .then(function(res){
-                        console.log(res);
                         window.location.assign("/loggedin"); 
                     })
                     .catch(function(err){

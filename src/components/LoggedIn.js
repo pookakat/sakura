@@ -38,8 +38,6 @@ export default class LoggedIn extends React.Component {
     componentDidMount(){
         const currentUser = window.localStorage.getItem('userName');
         const pageTheme = window.localStorage.getItem('theme');
-        console.log('hi?');
-        console.log(window.localStorage.getItem('userName'));
         document.getElementById('userName').textContent = currentUser;
         this.changeTheme(pageTheme);
     };

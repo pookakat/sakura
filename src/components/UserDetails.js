@@ -12,14 +12,12 @@ export default class UserDetails extends React.Component {
         const state = Object.assign({}, this.state);
         let user = window.localStorage.getItem('userName');
         var userInfo = {};
-        console.log(user)
         let route;
         if(window.location.href.includes('local')){
                 route = `http://localHost:3001/api/user-profiles/${user}`
             } else {
                 route = `/api/user-profiles/${user}`;
             }
-        console.log(route);
         axios.get(route, {
             method: 'GET',
                 
@@ -32,7 +30,6 @@ export default class UserDetails extends React.Component {
                     }
                 })
                 .then(function(res){
-                    console.log(res);
                     userInfo = res.data[0];
                     state.userInfo = userInfo;
                     document.getElementById('userFullName').innerText = state.userInfo.firstName + " " + state.userInfo.lastName;
@@ -44,7 +41,6 @@ export default class UserDetails extends React.Component {
                     else{
                         document.getElementById('hasGarden').innerText = 'You have a garden you need help with';
                     }
-                    console.log(state);
                 })
                 .catch(function(err){
                     console.log(err);
