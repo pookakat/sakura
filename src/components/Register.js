@@ -255,6 +255,7 @@ export default class Register extends React.Component {
     checkUser2 = () => {
         const user = document.getElementById("userName").value;
         if (user.length <= 2){
+            console.log('Too Short');
             document.getElementById("userName").value=null;
             alert('User names must be 3 or more characters. Please pick another name');
         }
@@ -279,6 +280,7 @@ export default class Register extends React.Component {
         .then(function(res){
             if (res.data.length !== 0){
                 document.getElementById("userName").value=null;
+                console.log('Used Name');
                 alert('Please pick a different user name.');
                 }
         })
