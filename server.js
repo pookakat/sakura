@@ -5,6 +5,7 @@ var cors = require("cors");
 
 var PORT = process.env.PORT || 3001;
 app.use(cors());
+console.log(process.env.PORT);
 
 app.get('/products/:id', function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
