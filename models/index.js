@@ -9,7 +9,7 @@ var config = require(__dirname + "/../config/config.js")[env];
 var db = {};
 
 
-
+console.log(env);
 
 if (typeof process.env.JAWSDB_URL != undefined) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
