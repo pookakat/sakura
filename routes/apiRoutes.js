@@ -3,8 +3,11 @@ const Messages = require("../models/messages");
 const Connections = require("../models/connections");
 
 module.exports = function(app) {
+    var app = express();
 
-    //login script for navbar
+    var cors = require('cors');
+    app.use(cors());
+
     app.get("/api/login", (req, res) => {
         const {user} = req.params;
         UserProfiles.findAll({
