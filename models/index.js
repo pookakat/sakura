@@ -21,6 +21,24 @@ var sequelize = new Sequelize("mysql://lm4tkikohrr52ljs:fhayany3f90q1rua@cdm1s48
     config
   );
 }*/
+var mysql = require('mysql');
+
+var connection;
+if (process.env.JAWSDB_URL) {
+    // Database is JawsDB on Heroku
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    // Database is local
+    connection = mysql.createConnection({
+        port: 3001,
+        host: 'localhost',
+        user: 'root',
+        password: 'password',
+        database: 'gardens_db'
+    })
+};
+
+var mysql = require('mysql');
 
 fs.readdirSync(__dirname)
   .filter(function(file) {
