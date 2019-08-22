@@ -2,19 +2,15 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
-var cors = require("cors");
 var db = require("./models");
 
 var PORT = process.env.PORT || 3001;
-app.use(cors());
 console.log;
+
+response.setHeader('Content-Type', 'text/html');
 
 app.get('/products/:id', function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
-});
-
-app.listen(80, function () {
-  console.log(`CORS-enabled web server listening on port 80`)
 });
 
 //app.use(express.urlencoded({ extended: true }));
