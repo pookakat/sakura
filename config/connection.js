@@ -10,10 +10,7 @@ if (jawsdb) {
   var sequelize = new Sequelize("gardening_db", "root", "password", {
     host: "localhost",
     dialect: "mysql",
-    port: 3306,
-    dialectOptions: {
-      insecureAuth: true
-    }
+    port: 3001
   })
   sequelize
   .authenticate()

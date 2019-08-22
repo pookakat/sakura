@@ -1,204 +1,207 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../config/connection.js");
 
-const UserProfiles = sequelize.define('UserProfiles',{
-    userName: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
+module.exports = function(sequelize, DataTypes){
+    const UserProfiles = sequelize.define('UserProfiles',{
+        userName: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
 
-    firstName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        // validate: {
-        //     len:
-        // }
+        firstName: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            // validate: {
+            //     len:
+            // }
 
-    },
-    lastName: {
-        type: Sequelize.STRING,
-        allowNull: true,
-        default: 'Gardener'
+        },
+        lastName: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            default: 'Gardener'
 
-    },
-    email: {
-        type: Sequelize.STRING,
-        allowNull: true,
-        default: 'none'
-    },
-    location: {
-        type: Sequelize.STRING,
-        allowNull: false
+        },
+        email: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            default: 'none'
+        },
+        location: {
+            type: Sequelize.STRING,
+            allowNull: false
 
-    },
-    gender:{
-        type: Sequelize.STRING,
-        allowNull: true
-    },
-    geocode: {
-        type: Sequelize.STRING
+        },
+        gender:{
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        geocode: {
+            type: Sequelize.STRING
 
-    },
-    password: {
-        type: Sequelize.STRING,
-        allowNull: false
+        },
+        password: {
+            type: Sequelize.STRING,
+            allowNull: false
 
-    },
-    image: {
-        type: Sequelize.STRING,
-        allowNull: true
-        
+        },
+        image: {
+            type: Sequelize.STRING,
+            allowNull: true
+            
 
-    },
-    avatar:{
-        type: Sequelize.STRING,
-        allowNull: true,
-        defaultValue: 'flower'
+        },
+        avatar:{
+            type: Sequelize.STRING,
+            allowNull: true,
+            defaultValue: 'flower'
 
 
-    },
-    intro: {
-        type: Sequelize.TEXT,
-        allowNull: true,
-        defaultValue: 'an empty plot...'
+        },
+        intro: {
+            type: Sequelize.TEXT,
+            allowNull: true,
+            defaultValue: 'an empty plot...'
 
-    },
-    hasGarden: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: false
+        },
+        hasGarden: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
 
-    },
-    availableTime: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        defaultValue: 5
+        },
+        availableTime: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            defaultValue: 5
 
-    },
-    organic: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        organic: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    flowers:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        flowers:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    tomatoes:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        tomatoes:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    cucumbers:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        cucumbers:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    sweetPeppers: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        sweetPeppers: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    beans:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        beans:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    peas: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        peas: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    carrots: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        carrots: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    squash:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        squash:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    lettuce:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        lettuce:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    watermelon:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        watermelon:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    onion:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        onion:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    sweetCorn:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        sweetCorn:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    cabbage:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        cabbage:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    potatoes:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        potatoes:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    radishes:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        radishes:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    mint:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        mint:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    basil:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        basil:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    cilantro:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        cilantro:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    beets:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        beets:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    zucchini:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        zucchini:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    broccoli:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        broccoli:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    other:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
+        },
+        other:{
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
 
-    },
-    theme:{
-        //this detects whether we are going on the forest or the flower theme. The default is false as the assumption is that the flower is our default and changing that is 'picking a new theme'
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
-    }
+        },
+        theme:{
+            //this detects whether we are going on the forest or the flower theme. The default is false as the assumption is that the flower is our default and changing that is 'picking a new theme'
+            type: Sequelize.BOOLEAN,
+            defaultValue: false
+        }
 
-},{
-    freezeTableName: true
-});
+    },{
+        freezeTableName: true
+    });
+        return UserProfiles;
+}
 UserProfiles.sync().then(()=>{
     UserProfiles.create({
         userName: 'bobpaulson',
@@ -319,4 +322,3 @@ UserProfiles.sync().then(()=>{
     })
 });
 
-module.exports = UserProfiles;
