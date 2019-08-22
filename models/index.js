@@ -21,7 +21,6 @@ if (typeof process.env.JAWSDB_URL != undefined) {
     config
   );
 };
-var mysql = require('mysql');
 
 var connection;
 if (process.env.JAWSDB_URL) {
@@ -37,8 +36,6 @@ if (process.env.JAWSDB_URL) {
         database: 'gardens_db'
     })
 };
-
-var mysql = require('mysql');
 
 fs.readdirSync(__dirname)
   .filter(function(file) {
