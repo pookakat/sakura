@@ -5,12 +5,12 @@ const Connections = require("../models/connections");
 module.exports = function(app) {
 
     //login script for navbar
-    app.get("/api/login", (req, res) => {
+    app.get("/api/login:user", (req, res) => {
         const {user} = req.params;
         UserProfiles.findAll({
             where: {
-                userName: req.query.uName,
-                password: req.query.password
+                userName: user.uName,
+                password: user.password
             }
         }).then((result)=>{
             return res.json(result);
@@ -18,10 +18,11 @@ module.exports = function(app) {
     });
 
     //script to verify that the username has not already been taken 
-    app.get("/api/check-user", (req, res) => {
+    app.get("/api/check-user:user", (req, res) => {
+        const {user} = req.params;
         UserProfiles.findAll({
             where: {
-                userName: req.query.userName
+                userName: user.userName
             }
         }).then((result) => {
             return res.json(result);
