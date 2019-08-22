@@ -1,15 +1,19 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../config/connection.js");
 
+var db = require('./index'),
+    sequelize = db.sequelize;
+    Sequelize = db.Sequelize;
+
 module.exports = function(sequelize, DataTypes){
     const UserProfiles = sequelize.define('UserProfiles',{
         userName: {
-            type: DataTypes.STRING,
+        type: Sequelize.STRING,
             allowNull: false
         },
 
         firstName: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             // validate: {
             //     len:
@@ -17,183 +21,183 @@ module.exports = function(sequelize, DataTypes){
 
         },
         lastName: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             default: 'Gardener'
 
         },
         email: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             default: 'none'
         },
         location: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false
 
         },
         gender:{
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
         },
         geocode: {
-            type: DataTypes.STRING
+            type: Sequelize.STRING
 
         },
         password: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false
 
         },
         image: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
             
 
         },
         avatar:{
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             defaultValue: 'flower'
 
 
         },
         intro: {
-            type: DataTypes.TEXT,
+            type: Sequelize.TEXT,
             allowNull: true,
             defaultValue: 'an empty plot...'
 
         },
         hasGarden: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             allowNull: false,
             defaultValue: false
 
         },
         availableTime: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             defaultValue: 5
 
         },
         organic: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         flowers:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         tomatoes:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         cucumbers:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         sweetPeppers: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         beans:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         peas: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         carrots: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         squash:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         lettuce:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         watermelon:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         onion:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         sweetCorn:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         cabbage:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         potatoes:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         radishes:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         mint:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         basil:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         cilantro:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         beets:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         zucchini:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         broccoli:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         other:{
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: true
 
         },
         theme:{
             //this detects whether we are going on the forest or the flower theme. The default is false as the assumption is that the flower is our default and changing that is 'picking a new theme'
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             defaultValue: false
         }
 
