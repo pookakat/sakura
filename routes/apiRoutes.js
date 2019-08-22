@@ -1,6 +1,7 @@
 const UserProfiles = require("../models/user-profiles");
 const Messages = require("../models/messages");
 const Connections = require("../models/connections");
+var express = require("express");
 
 module.exports = function(app) {
     var app = express();
