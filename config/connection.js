@@ -2,16 +2,16 @@ var mysql = require('mysql');
 var Sequelize = require("sequelize");
 var connection;
 const jawsdb = process.env.JAWSDB_URL;
-if (jawsdb) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-  const sequelize = new Sequelize(jawsdb);
-  console.log('running jawsDB', jawsdb);
-} else {
+
+connection = mysql.createConnection(process.env.JAWSDB_URL);
+const sequelize = new Sequelize(jawsdb);
+console.log('running jawsDB', jawsdb);
+/*} else {
   const sequelize = new Sequelize("gardening_db", "root", "password", {
     host: "localhost",
     dialect: "mysql",
     port: 3001
-  })
+  })*/
   sequelize
   .authenticate()
   .then(() => {
