@@ -22,13 +22,13 @@ if (typeof process.env.JAWSDB_URL != undefined) {
   );
 };
 
-var connection;
+
 if (process.env.JAWSDB_URL) {
     // Database is JawsDB on Heroku
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
+    const connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     // Database is local
-    connection = mysql.createConnection({
+    const connection = mysql.createConnection({
         port: 3001,
         host: 'localhost',
         user: 'root',

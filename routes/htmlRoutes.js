@@ -1,13 +1,8 @@
 var path = require("path");
+var db = require("../models");
 
 module.exports = function(app) {
-    app.get("/", function(request, response) {
-        response.sendFile(path.join(__dirname, "../public/html/index.html"));
+    app.get("/", function (req, res) {
+        res.render("index");
     });
-    app.get("/about", function(request, response) {
-        response.sendFile(path.join(__dirname, "../public/html/about.html"));
-    });
-    app.get("/profile", function(request, response) {
-        response.sendFile(path.join(__dirname, "../public/html/profile.html"));
-    });
-};
+}
