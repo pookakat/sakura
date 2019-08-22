@@ -18,7 +18,7 @@ console.log('running jawsDB', jawsdb);
   })
   .catch(err => {
   });
-}
+
 
 
 // Exports the connection for other files to use
