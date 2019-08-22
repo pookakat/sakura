@@ -20,3 +20,11 @@ require("./routes/htmlRoutes.js")(app);
 app.listen(PORT, function() {
     console.log("App is listening on: http://localhost:" + PORT);
 });
+
+// Timeout
+app.use(timeout(15000));
+app.use(haltOnTimedout);
+
+function haltOnTimedout(req, res, next) {
+    if (!req.timedout) next();
+}
