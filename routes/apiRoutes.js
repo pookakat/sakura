@@ -5,7 +5,7 @@ const Connections = require("../models/connections");
 module.exports = function(app) {
 
     //login script for navbar
-    app.get("/api/login:user", (req, res) => {
+    app.get("/api/login", (req, res) => {
         const {user} = req.params;
         UserProfiles.findAll({
             where: {
@@ -18,7 +18,7 @@ module.exports = function(app) {
     });
 
     //script to verify that the username has not already been taken 
-    app.get("/api/check-user:user", (req, res) => {
+    app.get("/api/check-user", (req, res) => {
         const {user} = req.params;
         UserProfiles.findAll({
             where: {
