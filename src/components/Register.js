@@ -227,7 +227,7 @@ export default class Register extends React.Component {
           if(window.location.href.includes('local')){
                 route = "http://localHost:3001/api/check-user"
           } else {
-              route = "https://sakuragardens.herokuapp.com:3001/api/check-user";
+              route = "https://sakuragardens.herokuapp.com:3306/api/check-user";
           }
           axios.get(route, {
             method: 'GET',
