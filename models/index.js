@@ -22,7 +22,11 @@ fs
   })
   .forEach(file => {
     const model = sequelize.import(path.join(__dirname, file));
-    db[model.name] = model;
+    try{
+      db[model.name] = model;
+    }catch(err){
+      console.error(err);
+    };
   });
 
 Object.keys(db).forEach(modelName => {
