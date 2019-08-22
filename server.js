@@ -30,8 +30,4 @@ app.use(function(req, res, next) {
 require("./routes/apiRoutes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 
-db.sequelize.sync({}).then(function(){
-  app.listen(3001, function() {
-      console.log("App is listening on: http://localhost:" + PORT);
-  });
-});
+
