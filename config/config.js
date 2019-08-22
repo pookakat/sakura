@@ -1,9 +1,9 @@
 module.exports = {
     "development": {
-        "username": "cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "username": "lm4tkikohrr52ljs",
         "password": "fhayany3f90q1rua",
         "database": "de6g2kkphqecqbq4",
-        "host": "127.0.0.1",
+        "host": "cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
       },
     "test": {
@@ -19,4 +19,4 @@ module.exports = {
       "dialect": "mysql"
     }
   }
-  
+ 
