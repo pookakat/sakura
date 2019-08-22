@@ -4,6 +4,9 @@ const Connections = require("../models/connections");
 
 module.exports = function(app) {
 
+    app.get('/users', function(req, res){
+        connection.query('SELECT * FROM 	`de6g2kkphqecqbq4`.user', function(err,data){(err)?res.send(err):res.json({users: data});} );
+    })
     //login script for navbar
     app.get("/api/login:user", (req, res) => {
         const {user} = req.params;
