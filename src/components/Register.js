@@ -236,7 +236,7 @@ export default class Register extends React.Component {
             //     "Access-Control-Request-Method": "POST",
             //     "Content-Type": "application/json"
             // },
-            params:{
+            data:{
               userName: user
             }
         })
