@@ -22,21 +22,6 @@ if (typeof process.env.JAWSDB_URL != undefined) {
   );
 };
 
-
-if (process.env.JAWSDB_URL) {
-    // Database is JawsDB on Heroku
-    const connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    // Database is local
-    const connection = mysql.createConnection({
-        port: 3001,
-        host: 'localhost',
-        user: 'root',
-        password: 'password',
-        database: 'gardens_db'
-    })
-};
-
 fs.readdirSync(__dirname)
   .filter(function(file) {
     return (
