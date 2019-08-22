@@ -45,5 +45,5 @@ models.forEach(file => {
 
 
 module.exports = {
-  getModels;
+  getModels
 };
