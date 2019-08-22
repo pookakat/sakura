@@ -11,8 +11,8 @@ app.get('/products/:id', function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
 });
 
-app.listen(PORT, function () {
-  console.log(`CORS-enabled web server listening on port ${PORT}`)
+app.listen(3001, function () {
+  console.log(`CORS-enabled web server listening on port 3001`)
 });
 
 app.use(express.urlencoded({ extended: true }));
@@ -29,7 +29,7 @@ app.use(function(req, res, next) {
 require("./routes/apiRoutes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 
-app.listen(PORT, function() {
+app.listen(3001, function() {
     console.log("App is listening on: http://localhost:" + PORT);
 });
 
