@@ -4,10 +4,10 @@ var connection;
 const jawsdb = process.env.JAWSDB_URL;
 if (jawsdb) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
-  var sequelize = new Sequelize(jawsdb);
+  const sequelize = new Sequelize(jawsdb);
   console.log('running jawsDB', jawsdb);
 } else {
-  var sequelize = new Sequelize("gardening_db", "root", "password", {
+  const sequelize = new Sequelize("gardening_db", "root", "password", {
     host: "localhost",
     dialect: "mysql",
     port: 3001
