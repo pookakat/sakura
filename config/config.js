@@ -1,9 +1,9 @@
 module.exports = {
     "development": {
-        "username": "lm4tkikohrr52ljs",
-        "password": "fhayany3f90q1rua",
-        "database": "de6g2kkphqecqbq4",
-        "host": "cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "username": process.env.MYSQL_USER,
+        "password": process.env.MYSQL_KEY,
+        "database": process.env.MYSQL_DBNAME,
+        "host": process.env.MYSQL_HOST,
         "dialect": "mysql"
       },
     "test": {
