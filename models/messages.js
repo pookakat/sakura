@@ -7,17 +7,17 @@ var db = require('./index'),
 module.exports = function(sequelize, DataType){
     const Messages = sequelize.define('Messages', {
         userInit: {
-            type: Sequelize.INTEGER,
+            type: sequelize.INTEGER,
             allowNull: false
 
         },
         userReceiving: {
-            type: Sequelize.INTEGER,
+            type: sequelize.INTEGER,
             allowNull: false
 
         },
         message: {
-            type: Sequelize.TEXT,
+            type: sequelize.TEXT,
             allowNull: false
 
         }
