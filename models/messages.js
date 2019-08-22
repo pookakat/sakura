@@ -4,17 +4,17 @@ const sequelize = require("../config/connection.js");
 module.exports = function(sequelize, DataTypes){
     const Messages = sequelize.define('Messages', {
         userInit: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
 
         },
         userReceiving: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
 
         },
         message: {
-            type: Sequelize.TEXT,
+            type: DataTypes.TEXT,
             allowNull: false
 
         }
