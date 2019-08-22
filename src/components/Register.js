@@ -263,7 +263,7 @@ export default class Register extends React.Component {
           if(window.location.href.includes('local')){
                 route = "http://localHost:3001/api/check-user"
           } else {
-              route = "/api/check-user";
+              route = "https://sakuragardens.herokuapp.com:3001/api/check-user";
           }
           axios.get(route, {
             method: 'GET',
@@ -381,7 +381,7 @@ export default class Register extends React.Component {
                     if(window.location.href.includes('local')){
                             route = "http://localHost:3001/api/user-profiles/newUser"
                     } else {
-                        route = "/api/user-profiles/newUser";
+                        route = "https://sakuragardens.herokuapp.com:3001/api/user-profiles/newUser";
                     }
                     axios.post(route, {
                         headers: "ACCEPT",

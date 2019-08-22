@@ -19,7 +19,7 @@ export default class MatchWrapper extends React.Component {
         if(window.location.href.includes('local')){
                 route = "http://localHost:3001/api/all"
             } else {
-                route = "/api/all";
+                route = "https://sakuragardens.herokuapp.com:3001/api/all";
             }
         return axios.get(route, {
             method: 'GET',
