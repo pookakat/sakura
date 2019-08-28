@@ -2,7 +2,7 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
-var db = require("./models");
+var db = require("./models/index");
 
 var PORT = process.env.PORT || 3001;
 console.log;
@@ -30,8 +30,4 @@ app.use(function(req, res, next) {
 require("./routes/apiRoutes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 
-db.sequelize.sync({}).then(function(){
-  app.listen(3001, function() {
-      console.log("App is listening on: http://localhost:" + PORT);
-  });
-});
+

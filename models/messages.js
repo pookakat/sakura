@@ -1,20 +1,23 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../config/connection.js");
+var Sequelize = require("sequelize");
 
-module.exports = function(sequelize, DataTypes){
+var db = require('./index'),
+    sequelize = db.sequelize;
+    Sequelize = db.Sequelize;
+
+module.exports = function(sequelize, DataType){
     const Messages = sequelize.define('Messages', {
         userInit: {
-            type: DataTypes.INTEGER,
+            type: sequelize.INTEGER,
             allowNull: false
 
         },
         userReceiving: {
-            type: DataTypes.INTEGER,
+            type: sequelize.INTEGER,
             allowNull: false
 
         },
         message: {
-            type: DataTypes.TEXT,
+            type: sequelize.TEXT,
             allowNull: false
 
         }
