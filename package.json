@@ -24,6 +24,10 @@
     "server.js": "^1.0.0",
     "typescript": "^3.5.3"
   },
+  "engines": {
+    "node": "10.5.1",
+    "npm": "6.9.0"
+},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
