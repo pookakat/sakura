@@ -9,6 +9,7 @@
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "braces": "^3.0.2",
+    "connect-timeout": "^1.9.0",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "eslint": "^6.1.0",
