@@ -4,7 +4,7 @@ const Messages = require("../models/messages");
 var express = require("express");
 
 module.exports = function(app) {
-    var app = express();
+    var app = express.Router();
 
     const options={headers:{
         'Content-Type': 'application/x-www-form-urlencoded',
