@@ -1,0 +1,22 @@
+{
+    "development": {
+      "username": "root",
+      "password": "25064c001023818v",
+      "database": "gardening_db",
+      "host": "localhost",
+      "dialect": "mysql",
+      "url": "mssql://localhost/gardening_db"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "gardening_db",
+      "host": "localhost",
+      "dialect": "mysql",
+      "logging": false
+    },
+    "production": {
+      "use_env_variable": "JAWSDB_URL",
+      "dialect": "mysql"
+    }
+  }

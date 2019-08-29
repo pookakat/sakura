@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var app = express();
 var db = require("./models/index");
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 console.log;
 
 
@@ -31,3 +31,6 @@ require("./routes/apiRoutes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 
 
+app.listen(PORT, function() {
+  console.log("App is listening on: http://localhost:" + PORT);
+});
