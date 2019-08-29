@@ -2,9 +2,7 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var timeout = require('connect-timeout');
-var morgan = require('morgan');
 var app = express();
-var db = require("./models/index");
 
 var PORT = process.env.PORT || 3001;
 console.log;
@@ -16,11 +14,11 @@ function haltOnTimedOut(req,res,next){
   if (!req.timedout) next();
 };
 
-app.use("/static", express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(timeout(15000));
 app.use(haltOnTimedOut);
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(haltOnTimedOut);
 
