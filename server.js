@@ -1,23 +1,30 @@
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require('method-override');
+var timeout = require('connection-timeout');
+var morgan = require('morgan');
 var app = express();
 var db = require("./models/index");
 
 var PORT = process.env.PORT || 3001;
 console.log;
 
-
-app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-});
-
 //app.use(express.urlencoded({ extended: true }));
 //app.use(express.json());
 
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+function haltOnTimedOut(req,res,next){
+  if (!req.timedout) next();
+};
+
+app.use("/static", express.static("public"));
+app.use(timeout(15000));
+app.use(haltOnTimedOut);
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(haltOnTimedOut);
+
 app.use(function(req, res, next) {
     response.setHeader('Content-Type', 'text/html');
     res.header("Access-Control-Allow-Origin", "*");
@@ -27,8 +34,10 @@ app.use(function(req, res, next) {
   });
   
 
-require("./routes/apiRoutes.js")(app);
-require("./routes/htmlRoutes.js")(app);
+var routes = require("./routes/apiRoutes.js");
+
+app.use('/', routes);
+app.use(haltOnTimedOut);
 
 
 app.listen(PORT, function() {
