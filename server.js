@@ -1,7 +1,6 @@
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
-var methodOverride = require('method-override');
 var timeout = require('connection-timeout');
 var morgan = require('morgan');
 var app = express();
