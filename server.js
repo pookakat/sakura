@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
-var timeout = require('connection-timeout');
+var timeout = require('connect-timeout');
 var morgan = require('morgan');
 var app = express();
 var db = require("./models/index");
