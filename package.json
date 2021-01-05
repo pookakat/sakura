@@ -5,7 +5,7 @@
   "homepage": "https://sakuragardens.herokuapp.com/",
   "dependencies": {
     "all": "0.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "braces": "^3.0.2",
